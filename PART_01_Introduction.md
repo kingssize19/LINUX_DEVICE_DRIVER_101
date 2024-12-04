@@ -67,18 +67,34 @@
 * Bir kernel modülü, çalıştırma zamanında kernele eklenebilen derlenmiş bir kod parçasıdır; örneğin insmod veya modprobe ile.
 * Bir sürücü, bazı donanım aygıtlarıyla iletişim kurmak için kernel içinde çalışan bir kod parçasıdır. Donanımı "sürer". Bilgisayarınızdaki neredeyse her donanım parçasının bir sürücüsü vardır.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Linux Aygıt Sürücüleri (Linux Device Drivers)
 
+* Aygıt sürücüsü, donanım aygıtlarıyla etkileşimi etkinleştirmek için tasarlanmış belirli bir yazılım uygulaması biçimidir. Gerekli aygıt sürücüsü olmadan, karşılık gelen donanım aygıtı çalışamaz.
+* Bir aygıt sürücüsü genellikle donanımla, donanımın bağlı olduğu iletişim alt sistemi veya bilgisayar veri yolu aracılığıyla iletişim kurar. Aygıt sürücüleri işletim sistemine özgüdür ve donanıma bağımlıdır. Bir aygıt sürücüsü, donanım aygıtı ile onu kullanan programlar veya işletim sistemleri arasında bir çevirmen görevi görür. 
 
+## Linux Aygıt Sürücüsü Türleri (Linux Aygıt Sürücüsü Türleri)
 
+Geleneksel sınıflandırmada, üç tür aygıt vardır:
 
+* Character Device
+* Block Device
+* Network Device
 
+Linux'ta her şey bir dosyadır. Yani, Linux donanımı bile bir dosya olarak kabul eder.
 
+### 1. Character Device
 
+* Bir karakter dosyası, verileri karakter bazında okuyan/yazan bir donanım dosyasıdır. Klavye, fare ve seri yazıcı gibi cihazlar buna klasik örneklerdir. Eğer bir kullanıcı, bir karakter dosyasını veri yazmak için kullanıyorsa, başka bir kullanıcı aynı karakter dosyasını veri yazmak için kullanamaz; bu, diğer kullanıcıya erişimi engeller. Karakter dosyaları, veriyi yazarken senkronize (eş zamanlı) bir teknik kullanır. Karakter dosyalarının iletişim amacıyla kullanıldığını görebilirsiniz ve bu dosyalar monte (mount) edilemez.
 
+### 2. Block Device
 
+* Bir blok dosyası, verileri karakter bazında değil, bloklar halinde okuyan/yazan bir donanım dosyasıdır. Bu tür dosyalar, toplu veri okuma/yazma işlemlerinde oldukça kullanışlıdır. Tüm disklerimiz (örneğin, HDD, USB, CD-ROM) blok cihazlarıdır. Bu nedenle, biçimlendirme (formatlama) yaparken blok boyutunu dikkate alırız. Verinin yazılması, eş zamansız (asenkron) bir şekilde yapılır ve bu işlem CPU'yu yoğun bir şekilde kullanır. Bu cihaz dosyaları, gerçek donanımda veri depolamak için kullanılır ve monte edilerek yazdığımız verilere erişmemizi sağlar.
 
+### 3. Network Device
 
+* Bir ağ cihazı, Linux’un ağ alt sistemi açısından, veri paketlerini gönderip alan bir varlıktır. Bu genellikle Ethernet kartı gibi fiziksel bir cihazdır. Bazı ağ cihazları ise sadece yazılımsal olup, örneğin, kendinize veri göndermek için kullanılan loopback cihazı gibi donanım değildir.
 
 
 
