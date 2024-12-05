@@ -8,7 +8,8 @@
 
 * Ardından Makefile dosyamızı oluşturalım. 
 
-![image](https://github.com/user-attachments/assets/b8fae2c7-7464-4f52-a2ca-7f55c41a66d2)
+![image](https://github.com/user-attachments/assets/9b15470d-9ce9-49e2-b425-324a0ec68d9f)
+
 
 * hello_world_module.ko dosyasına ulaşmak için kodumuzu derliyoruz. Bu dosyaları oluşturduktan sonra **make** komutunu çalıştırarak aşağıdaki çıktıları elde ediyoruz.
 
