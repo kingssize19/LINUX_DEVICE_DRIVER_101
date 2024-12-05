@@ -42,7 +42,7 @@ Bu makro, /sys/module altında bir alt dizin oluşturur. Örneğin;
 module_param(valueETX, int, S_IWUSR|S_IRUSR);
 ```
 **Bu kod aşağıdaki yolu oluşturur :**
-/sys/module/hello_world_module/parameters/valueETX
+* /sys/module/hello_world_module/parameters/valueETX
 
 **Desteklenen Türler :**
 
@@ -76,8 +76,28 @@ Aşağıdaki kod ile bir parametre oluşturduğumuzu varsayalım.
 module(valueETX, int, S_IWUSR | S_IRUSR);
 ```
 **Bu kod aşağıdaki yolu oluşturur :**
+* /sys/module/hello_world_module/parameters/valueETX
 
-/
+Bu değeri komut satırından şu şekilde değiştirebiliriz :
+```c
+echo 1 > /sys/module/hello_world_module/parameters/valueETX
+```
+Bu işlem valueETX değişkeninin değerini günceller. Ancak, modülümüz bu değişikliğin yapıldığını bilmez.
+
+
+### Bildirim Almak için module_param_cb()
+
+module_param_cb() makrosunu kullanarak, parametre değiştirildiğinde bildirim alabilirsiniz. Bu bildirimi almak için dosya operasyon yapısına kendi işlemci fonksiyonunuzu kaydetmeniz gerekir.
+
+```c
+struct kernel_param_ops {
+  int (*set)(const char *val, const struct kernel_param *kp);
+  int (*get)(char *buffer, const struct kernel_param *kp);
+  void (*free)(void *arg); 
+```
+
+**Pratik Senaryo :**
+Bir parametrenin değeri 1 olduğunda bir donanım kaydına yazı yazmamız gerektiğini düşünün. Parametre değişikliğinin size bildirilmesi olmadan bunu nasıl yapabilirsiniz? İşte bu durumda module_param_cb() makrosu kullanılır.
 
 
 
