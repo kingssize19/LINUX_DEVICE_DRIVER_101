@@ -1,7 +1,7 @@
 ## STEP 1
 
 * Ubuntu üzerinde "hello_world_module" adında bir klasör oluşturalım. **mkdir hello_world_module**
-* Daha sonra klasör içerisine girip "hello_world_module.c" adında bir .c dosyası oluşturalım. **touch hello_world_module.c"
+* Daha sonra klasör içerisine girip "hello_world_module.c" adında bir .c dosyası oluşturalım. **touch hello_world_module.c**
 * Aşağıda hello_world_module.c içerisinde yer alan kodumuzun fotoğrafı yer almaktadır.
 
 ![image](https://github.com/user-attachments/assets/5c2e4058-bf9f-4621-accf-505aad2485b8)
