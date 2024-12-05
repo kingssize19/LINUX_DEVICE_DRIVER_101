@@ -63,7 +63,7 @@ MODULE_DESCRIPTION("Bir örnek sürücü");
 Bu makroyu kullanarak modülün veya sürücünün sürümünü belirtebiliriz. Böylece modinfo, modül sürümünü kullanıcılara gösterebilir.
 
 * **Sürüm Formatı :**
-  * [\<epoch]\
+  * [\<epoch\]
 
 
 
