@@ -20,7 +20,7 @@
 ## STEP 2
 
 * Modülümüzü çekirdeğe yüklemeden önce gelin çekirdekti modüllere bir göz atalım.
-* lsmod komutu ile çekirdeğimizde yer modülleri görüntüleyebiliriz.
+* **lsmod** komutu ile çekirdeğimizde yer alan modülleri görüntüleyebiliriz.
 
 ![image](https://github.com/user-attachments/assets/c2424f51-a3a9-4572-b9ee-6d72026851cd)
 
